@@ -1,0 +1,77 @@
+{
+  "uci_id": 880,
+  "name": "SUPPORT2",
+  "repository_url": "https://archive.ics.uci.edu/dataset/880/support2",
+  "data_url": "https://archive.ics.uci.edu/static/public/880/data.csv",
+  "abstract": "This dataset comprises 9105 individual critically ill patients across 5 United States medical centers, accessioned throughout 1989-1991 and 1992-1994.\nEach row concerns hospitalized patient records who met the inclusion and exclusion criteria for nine disease categories: acute respiratory failure, chronic obstructive pulmonary disease, congestive heart failure, liver disease, coma, colon cancer, lung cancer, multiple organ system failure with malignancy, and multiple organ system failure with sepsis. The goal is to determine these patients' 2- and 6-month survival rates based on several physiologic, demographics, and disease severity information. \nIt is an important problem because it addresses the growing national concern over patients' loss of control near the end of life. It enables earlier decisions and planning to reduce the frequency of a mechanical, painful, and prolonged dying process.",
+  "area": "Health and Medicine",
+  "tasks": [
+    "Classification",
+    "Regression",
+    "Other"
+  ],
+  "characteristics": [
+    "Tabular",
+    "Multivariate"
+  ],
+  "num_instances": 9105,
+  "num_features": 42,
+  "feature_types": [
+    "Real",
+    "Categorical",
+    "Integer"
+  ],
+  "demographics": [
+    "Age",
+    "Sex",
+    "Education Level",
+    "Income",
+    "Race"
+  ],
+  "target_col": [
+    "death",
+    "hospdead",
+    "sfdm2"
+  ],
+  "index_col": [
+    "id"
+  ],
+  "has_missing_values": "yes",
+  "missing_values_symbol": "NaN",
+  "year_of_dataset_creation": 1995,
+  "last_updated": "Mon Sep 09 2024",
+  "dataset_doi": "10.3886/ICPSR02957.v2",
+  "creators": [
+    "Frank Harrel"
+  ],
+  "intro_paper": {
+    "ID": 298,
+    "type": "NATIVE",
+    "title": "A controlled trial to improve care for seriously ill hospitalized patients. The study to understand prognoses and preferences for outcomes and risks of treatments (SUPPORT)",
+    "authors": "The SUPPORT Principal Investigators",
+    "venue": "In the Journal of the American Medical Association, 274(20):1591\u20131598",
+    "year": 1995,
+    "journal": null,
+    "DOI": null,
+    "URL": "https://pubmed.ncbi.nlm.nih.gov/7474243/",
+    "sha": null,
+    "corpus": null,
+    "arxiv": null,
+    "mag": null,
+    "acl": null,
+    "pmid": null,
+    "pmcid": null
+  },
+  "additional_info": {
+    "summary": "Data sources are medical records, personal interviews, and the National Death Index (NDI). For each patient administrative records data, clinical data and survey data were collected.\nThe objective of the SUPPORT project was to improve decision-making in order to address the growing national concern over the loss of control that patients have near the end of life and to reduce the frequency of a mechanical, painful, and prolonged process of dying. SUPPORT comprised a two-year prospective observational study (Phase I) followed by a two-year controlled clinical trial (Phase II). Phase I of SUPPORT collected data from patients accessioned during 1989-1991 to characterize the care, treatment preferences, and patterns of decision-making among critically ill patients. It also served as a preliminary step for devising an intervention strategy for improving critically-ill patients' care and for the construction of statistical models for predicting patient prognosis and functional status. An intervention was implemented in Phase II of SUPPORT, which accessioned patients during 1992-1994. The Phase II intervention provided physicians with accurate predictive information on future functional ability, survival probability to six months, and patients' preferences for end-of-life care. Additionally, a skilled nurse was provided as part of the intervention to elicit patient preferences, provide prognoses, enhance understanding, enable palliative care, and facilitate advance planning. The intervention was expected to increase communication, resulting in earlier decisions to have orders against resuscitation, decrease time that patients spent in undesirable states (e.g., in the Intensive Care Unit, on a ventilator, and in a coma), increase physician understanding of patients' preferences for care, decrease patient pain, and decrease hospital resource use. Data collection in both phases of SUPPORT consisted of questionnaires administered to patients, their surrogates, and physicians, plus chart reviews for abstracting clinical, treatment, and decision information. Phase II also collected information regarding the implementation of the intervention, such as patient-specific logs maintained by nurses assigned to patients as part of the intervention. SUPPORT patients were followed for six months after inclusion in the study. Those who did not die within six months or were lost to follow-up were matched against the National Death Index to identify deaths through 1997. Patients who did not die within one year or were lost to follow-up were matched against the National Death Index to identify deaths through 1997.\nAll patients in five United States medical centers who met inclusion and exclusion criteria for nine disease categories: acute respiratory failure, chronic obstructive pulmonary disease, congestive heart failure, liver disease, coma, colon cancer, lung cancer, multiple organ system failure with malignancy, and multiple organ system failure with sepsis. SUPPORT is a combination of patients from 2 studies, each of which lasted 2 years. The first phase concerns 4,301 patients, whereas the second phase concerns 4,804 patients. Time wise, these studies were accessioned in 1989 (June 12) through 1991 (June 11) for phase I and in 1992 (January 7) through 1994 (January 24).",
+    "purpose": "To develop and validate a prognostic model that estimates survival over a 180-day period for seriously ill hospitalized adults (phase I of SUPPORT) and to compare this model's predictions with those of an existing prognostic system and with physicians' independent estimates (SUPPORT phase II).",
+    "funded_by": "Funded by the Robert Wood Johnson Foundation\n",
+    "instances_represent": "The instances represent records of critically ill patients admitted to United States hospitals with advanced stages of serious illness.\n",
+    "recommended_data_splits": "No recommendation, standard train-test split could be used. Can use three-way holdout split (i.e., train-validation-test) when doing model selection.",
+    "sensitive_data": "Yes. There is information about race, gender, income, and education level.",
+    "preprocessing_description": "No.  Due to the high percentage of missing values, there are a couple of recommended imputation values:\nAccording to the HBiostat Repository (https://hbiostat.org/data/repo/supportdesc, Professor Frank Harrell) the following default values have been found to be useful in imputing missing baseline physiologic data:\nBaseline Variable\tNormal Fill-in Value\n- Serum albumin (alb)\t3.5\n- PaO2/FiO2 ratio (pafi) \t333.3\n- Bilirubin (bili)\t1.01\n- Creatinine (crea)\t1.01\n- bun\t6.51\n- White blood count (wblc)\t9 (thousands)\n- Urine output (urine)\t2502\nThere are 159 patients surviving 2 months for whom there were no patient or surrogate interviews. These patients have missing sfdm2.",
+    "variable_info": null,
+    "citation": "Please acknowledge the source of this dataset as being from Vanderbilt University Department of Biostatistics, Professor Frank Harrell 2022, url: https://hbiostat.org/data/"
+  },
+  "external_url": "https://hbiostat.org/data"
+}
