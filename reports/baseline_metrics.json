@@ -1,0 +1,9 @@
+{
+  "script": "Baseline_mdel_prediction_surival.py",
+  "n_train": 7284,
+  "n_test": 1821,
+  "auc": 0.7082491255343957,
+  "accuracy": 0.6326194398682042,
+  "log_loss": 0.6294452061390287,
+  "brier": 0.2191896360209111
+}

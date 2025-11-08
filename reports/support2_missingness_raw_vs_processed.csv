@@ -1,0 +1,72 @@
+column,missing_pct_raw,missing_pct_processed
+adlp,61.955,0.0
+adls,31.4882,0.0
+adlsc,0.0,0.0
+age,0.0,0.0
+alb,37.0346,0.0
+aps,0.011,0.0
+avtisst,0.9006,0.0
+bili,28.5667,0.0
+bun,47.7979,0.0
+ca,0.0,0.0
+ca_no,0.0,0.0
+ca_yes,0.0,0.0
+charges,1.8891,0.0
+crea,0.7359,0.0
+death,0.0,0.0
+dementia,0.0,0.0
+diabetes,0.0,0.0
+dnr,0.3295,0.0
+dnr_dnr before sadm,0.0,0.0
+dnr_no dnr,0.0,0.0
+dnrday,0.3295,0.0
+dzclass,0.0,0.0
+dzclass_COPD/CHF/Cirrhosis,0.0,0.0
+dzclass_Cancer,0.0,0.0
+dzclass_Coma,0.0,0.0
+dzgroup,0.0,0.0
+dzgroup_CHF,0.0,0.0
+dzgroup_COPD,0.0,0.0
+dzgroup_Cirrhosis,0.0,0.0
+dzgroup_Colon Cancer,0.0,0.0
+dzgroup_Coma,0.0,0.0
+dzgroup_Lung Cancer,0.0,0.0
+dzgroup_MOSF w/Malig,0.0,0.0
+edu,17.9462,0.0
+glucose,49.4234,0.0
+hday,0.0,0.0
+hospdead,0.0,0.0
+hrt,0.011,0.0
+income,32.7512,0.0
+income_$25-$50k,0.0,0.0
+income_>$50k,0.0,0.0
+income_under $11k,0.0,0.0
+meanbp,0.011,0.0
+num.co,0.0,0.0
+pafi,25.5354,0.0
+ph,25.0851,0.0
+prg2m,18.1109,0.0
+prg6m,17.9352,0.0
+race,0.4613,0.0
+race_black,0.0,0.0
+race_hispanic,0.0,0.0
+race_other,0.0,0.0
+race_white,0.0,0.0
+resp,0.011,0.0
+scoma,0.011,0.0
+sex,0.0,0.0
+sex_male,0.0,0.0
+sfdm2,15.3762,0.0
+sfdm2_Coma or Intub,0.0,0.0
+sfdm2_SIP>=30,0.0,0.0
+sfdm2_adl>=4 (>=5 if sur),0.0,0.0
+sfdm2_no(M2 and SIP pres),0.0,0.0
+sod,0.011,0.0
+sps,0.011,0.0
+surv2m,0.011,0.0
+surv6m,0.011,0.0
+temp,0.011,0.0
+totcst,9.7529,0.0
+totmcst,38.1658,0.0
+urine,53.3992,0.0
+wblc,2.3284,0.0

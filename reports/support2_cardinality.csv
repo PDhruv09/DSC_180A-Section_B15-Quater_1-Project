@@ -1,0 +1,64 @@
+column,n_unique
+charges,8501
+totcst,8197
+age,7323
+totmcst,5517
+adlsc,1735
+urine,1494
+pafi,1457
+surv2m,949
+surv6m,936
+sps,604
+wblc,499
+glucose,439
+avtisst,352
+bili,295
+hrt,186
+dnrday,177
+meanbp,164
+bun,159
+crea,130
+aps,125
+temp,98
+prg6m,87
+hday,85
+ph,77
+resp,66
+sod,60
+alb,60
+prg2m,51
+edu,31
+scoma,11
+num.co,10
+adlp,8
+adls,8
+diabetes,2
+dementia,2
+death,2
+hospdead,2
+sex_male,2
+dzgroup_CHF,2
+dzgroup_COPD,2
+dzgroup_Cirrhosis,2
+dzgroup_Colon Cancer,2
+dzgroup_Coma,2
+dzgroup_Lung Cancer,2
+dzgroup_MOSF w/Malig,2
+dzclass_COPD/CHF/Cirrhosis,2
+dzclass_Cancer,2
+dzclass_Coma,2
+income_$25-$50k,2
+income_>$50k,2
+income_under $11k,2
+race_black,2
+race_hispanic,2
+race_other,2
+race_white,2
+ca_no,2
+ca_yes,2
+dnr_dnr before sadm,2
+dnr_no dnr,2
+sfdm2_Coma or Intub,2
+sfdm2_SIP>=30,2
+sfdm2_adl>=4 (>=5 if sur),2
+sfdm2_no(M2 and SIP pres),2

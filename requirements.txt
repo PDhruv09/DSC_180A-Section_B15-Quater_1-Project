@@ -5,7 +5,7 @@
 ```txt
 pandas
 numpy
-matplotlib
+matplotlib.pyplot
 seaborn
 scikit-learn
 opacus
