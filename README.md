@@ -1,5 +1,5 @@
 # DSC_180A Section_B15 Quater_1 Project  
-**Title:** Evaluating Differentially Private Synthetic Data Generation Using the SUPPORT2 Clinical Dataset  
+**Title:** Differentially Private Telemetry Data Analysis – Non-Private Exploration
 **Team:** Dhruv Patel , Reva Agrawal, and Jordan Lambino 
 **Mentor:** Prof. Yu-Xiang Wang  
 
