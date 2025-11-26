@@ -1,7 +1,7 @@
 # DSC_180A Section_B15 Quater_1 Project  
 **Title:** Evaluating Differentially Private Synthetic Data Generation Using the SUPPORT2 Clinical Dataset  
 **Team:** Dhruv Patel , Reva Agrawal, and Jordan Lambino 
-**Meentor:** Prof. Yu-Xiang Wang  
+**Mentor:** Prof. Yu-Xiang Wang  
 
 ## Overview
 This project investigates the feasibility and accuracy of generating synthetic datasets that preserve privacy while maintaining statistical utility, using a synthetic telemetry event log dataset as a case study. The dataset contains user-level event logs for multiple product types, with attributes for product type, event type, timestamp, and user ID.
