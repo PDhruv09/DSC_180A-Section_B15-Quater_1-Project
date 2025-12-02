@@ -16,7 +16,7 @@ Our primary goal is to explore how well differentially private mechanisms and sy
   - `data/processed/` — Cleaned version with parsed timestamps and derived features.  
   - `data/synthetic/` — To be used for storing differentially private synthetic datasets.  
 - `notebooks/` — Jupyter notebooks for exploratory analysis and experimentation (e.g., `README.ipynb`).  
-- `src/` — Python scripts for preprocessing, summary statistics, baseline metrics, and evaluation metrics for Gaussian and Laplace mechanisms.  
+- `src/` — Python scripts for preprocessing, summary statistics, baseline metrics, and evaluation metrics for Gaussian vs. Laplace mechanisms.  
 - `reports/` — CSV and JSON outputs containing summary statistics and baseline metrics.  
 - `visuals/` — Plots and figures for telemetry event counts and error rates.  
 - `scripts/` — (Optional) Shell scripts for running the pipeline end-to-end. 
@@ -47,7 +47,7 @@ This script:
   - event_date: Date of event
   - event_hour: Hour of event (0–23)
   - event_dow: Day of week (0=Mon–6=Sun)
-  - is_weekend: Boolean (1 if weekend)
+ - is_weekend: Boolean (1 if weekend)
     
 ## Summary Statistics
 ### 📊 Statistical Formulas
@@ -77,24 +77,24 @@ python src/summary_stats.py
 ```
 Creates:
 - Generates frequency tables:
-- - Events by product type
-- - Events by event type
-- - Events per day
-- - Unique users per product type
+  - Events by product type
+  - Events by event type
+  - Events per day
+  - Unique users per product type
 
 Calculates error rates and z-scores using:
 - Saves results in reports/ and plots in visuals/.
 - Output reports:
-- - telemetry_summary_statistics.csv
-- - telemetry_event_counts_by_product.csv
-- - telemetry_event_counts_by_type.csv
-- - telemetry_events_per_day.csv
-- - telemetry_unique_users_per_product.csv
-- - telemetry_error_rates_zscores.csv
+  - telemetry_summary_statistics.csv
+  - telemetry_event_counts_by_product.csv
+  - telemetry_event_counts_by_type.csv
+  - telemetry_events_per_day.csv
+  - telemetry_unique_users_per_product.csv
+  - telemetry_error_rates_zscores.csv
 
 - Output visuals:
-- - event_type_distribution.png
-- - product_type_distribution.png
-- - events_over_time.png
-- - error_rate_by_product.png
-- - error_rate_zscore_by_product.png
+  - event_type_distribution.png
+  - product_type_distribution.png
+  - events_over_time.png
+  - error_rate_by_product.png
+  - error_rate_zscore_by_product.png
