@@ -16,7 +16,7 @@ Our primary goal is to explore how well differentially private mechanisms and sy
   - `data/processed/` — Cleaned version with parsed timestamps and derived features.  
   - `data/synthetic/` — To be used for storing differentially private synthetic datasets.  
 - `notebooks/` — Jupyter notebooks for exploratory analysis and experimentation (e.g., `README.ipynb`).  
-- `src/` — Python scripts for preprocessing, summary statistics, and baseline metrics.  
+- `src/` — Python scripts for preprocessing, summary statistics, baseline metrics, and evaluation metrics for Gaussian and Laplace mechanisms.  
 - `reports/` — CSV and JSON outputs containing summary statistics and baseline metrics.  
 - `visuals/` — Plots and figures for telemetry event counts and error rates.  
 - `scripts/` — (Optional) Shell scripts for running the pipeline end-to-end. 
@@ -35,7 +35,7 @@ Time of Event: Timestamp between May 1, 2024 and July 31, 2024.
 User ID: Anonymized user identifier.
 
 ## Data Preprocessing
-Cleans and prepares the dataset for modeling.
+Clean and prepare the dataset for modeling with:
 ```bash
 python src/preprocess.py
 ```
@@ -44,10 +44,10 @@ This script:
 - Outputs: data/processed/telemetry_clean.csv
 
 - Columns added:
-- - event_date: Date of event
-- - event_hour: Hour of event (0–23)
-- - event_dow: Day of week (0=Mon–6=Sun)
-- - is_weekend: Boolean (1 if weekend)
+  - event_date: Date of event
+  - event_hour: Hour of event (0–23)
+  - event_dow: Day of week (0=Mon–6=Sun)
+  - is_weekend: Boolean (1 if weekend)
     
 ## Summary Statistics
 ### 📊 Statistical Formulas
