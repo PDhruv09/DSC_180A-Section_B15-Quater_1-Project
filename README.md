@@ -52,22 +52,21 @@ This script:
 ## Summary Statistics
 ### 📊 Statistical Formulas
 The following equations are implemented to calculate core telemetry metrics:
-1. Error Count per Product Type
-$$
-\text{ErrorCount}_P = \sum_i 1\{\text{EventType}_i = \text{error},\ \text{ProductType}_i = P\}
-$$
-2. Total Event Count per Product Type
-$$
-\text{TotalCount}_P = \sum_i 1\{\text{ProductType}_i = P\}
-$$
-3. Error Rate
-$$
-\text{ErrorRate}_P = \frac{\text{ErrorCount}_P}{\text{TotalCount}_P}
-$$
-4. Z-Score
-$$
-Z_P = \frac{\text{ErrorRate}_P - \overline{\text{ErrorRate}}}{\text{SD}(\text{ErrorRate})}
-$$
+1. Error Count per Product Type:
+
+ErrorCount_P = sum over all i of 1{ EventType_i = "error" AND ProductType_i = P }
+
+2. Total Event Count per Product Type:
+
+TotalCount_P = sum over all i of 1{ ProductType_i = P }
+
+3. Error Rate:
+
+ErrorRate_P = ErrorCount_P / TotalCount_P
+
+4. Z-Score:
+
+Z_P = (ErrorRate_P - mean(ErrorRate)) / SD(ErrorRate)
 
 Product types with positive z-scores perform worse than average, meaning they have higher error rates relative to other product types.
 
