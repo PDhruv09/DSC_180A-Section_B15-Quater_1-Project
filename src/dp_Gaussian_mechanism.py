@@ -1,24 +1,22 @@
 """
 dp_mechanism.py
 
-Implements a user-level (add/remove-one-user) Gaussian DP mechanism
-for the telemetry dataset, BY HAND.
+Implements a user-level (adds/removes-one-user) Gaussian DP mechanism for the telemetry dataset, BY HAND.
 
-Pipeline:
-1) Load cleaned telemetry data (telemetry_clean.csv).
-2) Collapse to user-level "primary product" contributions.
+Pipeline of the file:
+1) Loads cleaned telemetry data (telemetry_clean.csv).
+2) Collapse to user-level "primary product" contributions of the data.
 3) Compute user-level counts per product:
    - U_total_P = # of users primarily using product P
    - U_error_P = # of those users who ever had an 'error' on P
 4) Compute TRUE error rates and z-scores.
 5) Add Gaussian noise with analytically chosen sigma to U_total and U_error.
-6) Recompute DP error rates and DP z-scores.
-7) Return both true and DP z-scores and the corresponding "top sets"
-   (products with z-score > 0).
+6) Recompute DP error rates and DP z-scores for comparsion.
+7) Return both true and DP z-scores and the corresponding "top sets" 
+    top sets refers to (products with z-score > 0).
 
-This file does NOT generate synthetic data; it only produces
-DP-perturbed aggregates that can be used to generate synthetic data
-or for direct evaluation (L_inf, IOU) in dp_eval.py.
+For clarity this file does NOT generate synthetic data; it only produces DP-perturbed aggregates that can be used to 
+generate synthetic data or for direct evaluation (L_inf, IOU) in dp_eval_gaussiant.py.
 """
 
 import os
@@ -28,6 +26,7 @@ from scipy.stats import zscore
 
 # -----------------------------
 #  Global config / constants
+#  to make sure that directory are the same even if you run on different computer
 # -----------------------------
 
 # Project paths (relative to repo root)
@@ -39,7 +38,7 @@ os.makedirs(REPORT_DIR, exist_ok=True)
 # Clean telemetry file produced by preprocess.py
 CLEAN_PATH = os.path.join(PROC_DIR, "telemetry_clean.csv")
 
-# Default DP parameters from the assignment
+# Default DP parameters from the jupyter notebook given by the Professor
 DEFAULT_EPSILON = 2.0
 DEFAULT_DELTA = 1e-6
 
@@ -57,7 +56,7 @@ L2_SENSITIVITY = np.sqrt(2.0)
 #  Helper: Load cleaned data
 # -----------------------------
 
-def load_clean_telemetry() -> pd.DataFrame:
+def load_clean_telemetry():
     """
     Load the cleaned telemetry CSV produced by preprocess.py.
 
@@ -79,7 +78,7 @@ def load_clean_telemetry() -> pd.DataFrame:
 #  User-level primary product
 # -----------------------------
 
-def build_user_level_primary_product(df: pd.DataFrame) -> pd.DataFrame:
+def build_user_level_primary_product(df: pd.DataFrame):
     """
     Collapse the telemetry data to ONE row per (User ID, Product Type),
     then pick a SINGLE "primary product" per user.
@@ -96,7 +95,7 @@ def build_user_level_primary_product(df: pd.DataFrame) -> pd.DataFrame:
     - For each user, we choose the product where they have the MOST events.
     - If there is a tie, pandas' idxmax picks the first occurrence.
 
-    Returned DataFrame columns:
+    Returns a DataFrame with the following columns:
         - User ID
         - Product Type (primary product)
         - n_events (events for that user on that primary product)
@@ -127,10 +126,9 @@ def build_user_level_primary_product(df: pd.DataFrame) -> pd.DataFrame:
 #  True user-level counts and z-scores
 # -----------------------------
 
-def compute_true_user_level_counts(primary: pd.DataFrame) -> pd.DataFrame:
+def compute_true_user_level_counts(primary: pd.DataFrame):
     """
     Given the primary-product per-user DataFrame, compute TRUE user-level counts:
-
         U_total_P = # users whose primary product is P
         U_error_P = # of those users who have any_error == True on P
 
@@ -186,7 +184,7 @@ def compute_true_user_level_counts(primary: pd.DataFrame) -> pd.DataFrame:
 #  Gaussian DP mechanism
 # -----------------------------
 
-def gaussian_sigma(l2_sensitivity: float, epsilon: float, delta: float) -> float:
+def gaussian_sigma(l2_sensitivity: float, epsilon: float, delta: float):
     """
     Compute the Gaussian noise scale (sigma) for (epsilon, delta)-DP
     using the standard analytic bound from the basic Gaussian mechanism:
@@ -204,7 +202,7 @@ def add_gaussian_noise_to_counts(
     epsilon: float = DEFAULT_EPSILON,
     delta: float = DEFAULT_DELTA,
     random_state: int | None = None,
-) -> pd.DataFrame:
+):
     """
     Apply the Gaussian mechanism to the user-level counts (U_total, U_error)
     for each product type.
@@ -263,7 +261,7 @@ def add_gaussian_noise_to_counts(
 #  Top-set helpers
 # -----------------------------
 
-def get_top_set_from_zscores(z_series: pd.Series, threshold: float = 0.0) -> set:
+def get_top_set_from_zscores(z_series: pd.Series, threshold: float = 0.0):
     """
     Given a Series of z-scores indexed by product type,
     return the set of product types whose z-score > threshold.
