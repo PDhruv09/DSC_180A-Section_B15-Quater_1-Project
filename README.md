@@ -11,7 +11,7 @@
 
 ---
 
-## 📋 Table of Contents
+## Table of Contents
 - [Overview](#overview)
 - [Repository Structure](#-repository-structure)
 - [Installation](#-installation)
@@ -30,7 +30,7 @@
 ## Overview
 This project investigates the feasibility and accuracy of generating synthetic datasets that preserve privacy while maintaining statistical utility, using a synthetic telemetry event log dataset as a case study. The dataset contains user-level event logs for multiple product types, with attributes for product type, event type, timestamp, and user ID.
 
-Our primary goal is to explore how well differentially private mechanisms (both **Gaussian** and **Laplace**) can reproduce key analytical quantities — such as error counts and error rates per product — without compromising user-level privacy. By comparing real and DP-noisy results on metrics like per-product error rate and average error rate across products, we evaluate the trade-off between privacy protection and data utility.
+Our primary goal is to explore how well differentially private mechanisms (both **Gaussian** and **Laplace**) can reproduce key analytical quantities such as error counts and error rates per product without compromising user-level privacy. By comparing real and DP-noisy results on metrics like per-product error rate and average error rate across products, we evaluate the trade-off between privacy protection and data utility.
 
 ### Key Research Questions
 1. How accurately can differentially private mechanisms preserve statistical utility?
@@ -40,7 +40,7 @@ Our primary goal is to explore how well differentially private mechanisms (both 
 
 ---
 
-## 📂 Repository Structure
+## Repository Structure
 ```
 DSC_180A-Section_B15-Quarter_1-Project/
 ├── data/
@@ -90,12 +90,12 @@ DSC_180A-Section_B15-Quarter_1-Project/
 
 ---
 
-## 🔧 Installation
+## Installation
 
 ### Prerequisites
 - Python 3.8 or higher
 - pip package manager
-- Jupyter Notebook (for interactive analysis)
+- Jupyter Notebook
 
 ### Setup
 1. **Clone the repository:**
@@ -104,7 +104,7 @@ git clone https://github.com/PDhruv09/DSC_180A-Section_B15-Quarter_1-Project.git
 cd DSC_180A-Section_B15-Quarter_1-Project
 ```
 
-2. **Create a virtual environment (recommended):**
+2. **Create a virtual environment:**
 ```bash
 python -m venv venv
 source venv/bin/activate  # On Windows: venv\Scripts\activate
@@ -124,9 +124,9 @@ pip install -r requirements.txt
 
 ---
 
-## 🚀 Getting Started
+## Getting Started
 
-### Quick Start Pipeline
+### Pipeline
 Run the complete analysis pipeline with:
 
 ```bash
@@ -153,7 +153,7 @@ python src/dp_eval_laplace.py
 
 ---
 
-## 🗃️ Data (Synthetic Telemetry)
+## Data (Synthetic Telemetry)
 The dataset contains synthetic telemetry event logs with the following attributes:
 
 | Attribute       | Description                                          | Type        |
@@ -171,7 +171,7 @@ The dataset contains synthetic telemetry event logs with the following attribute
 
 ---
 
-## 💻 Usage
+## Usage
 
 ### Running Python Scripts
 
@@ -368,7 +368,7 @@ Then navigate to the `notebooks/` directory and open:
 
 ---
 
-## 📊 Statistical Methods
+## Statistical Methods
 
 ### Core Metrics
 
@@ -465,7 +465,7 @@ b = Δ₁ / ε
 
 ---
 
-## 📈 Evaluation Metrics
+## Evaluation Metrics
 
 ### 1. **L∞ Error on Z-Scores**
 ```
@@ -501,7 +501,7 @@ This characterizes the **variability** introduced by randomness in the DP mechan
 
 ---
 
-## 🔍 Results
+## Results
 
 ### What We Analyze
 
@@ -528,7 +528,7 @@ This characterizes the **variability** introduced by randomness in the DP mechan
 
 ---
 
-## 🔮 Future Work
+## Future Work
 
 1. **Synthetic Data Generation:**
    - Use DP counts to generate fully synthetic telemetry datasets
@@ -543,14 +543,14 @@ This characterizes the **variability** introduced by randomness in the DP mechan
    - Sequential composition over time windows
    - Privacy budget allocation strategies
 
-4. **Real-World Deployment:**
+4. ** Production Deployment:**
    - Scale to production telemetry systems
    - Develop automated DP reporting pipelines
    - Create privacy-preserving dashboards
 
 ---
 
-## 📧 Contact
+## Contact
 
 For questions or feedback:
 - **Dhruv Patel** - [@PDhruv09](https://github.com/PDhruv09)
@@ -559,7 +559,7 @@ For questions or feedback:
 
 ---
 
-## 🙏 Acknowledgments
+## Acknowledgments
 
 - **Advisor:** Yu-Xiang Wang, UC San Diego
 - **Course:** DSC 180A (Data Science Capstone), Fall 2024
