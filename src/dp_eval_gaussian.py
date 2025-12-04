@@ -1,5 +1,5 @@
 """
-dp_eval.py
+dp_eval_gaussian.py
 
 Runs the Gaussian DP mechanism multiple times and evaluates utility
 via:
@@ -158,7 +158,7 @@ def main(
         "IOU_summary": iou_summary,
     }
 
-    summary_path = os.path.join(REPORT_DIR, "dp_eval_summary.json")
+    summary_path = os.path.join(REPORT_DIR, "dp_eval_summary_gaussian.json")
     with open(summary_path, "w") as f:
         json.dump(summary, f, indent=2)
 
