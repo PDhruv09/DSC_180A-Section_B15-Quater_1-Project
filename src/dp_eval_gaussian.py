@@ -142,7 +142,7 @@ def main(
             "IOU": iou_values,
         }
     )
-    runs_csv_path = os.path.join(REPORT_DIR, "dp_eval_runs.csv")
+    runs_csv_path = os.path.join(REPORT_DIR, "dp_eval_runs_gaussian.csv")
     runs_df.to_csv(runs_csv_path, index=False)
     print(f"[dp_eval] Saved per-run metrics -> {runs_csv_path}")
 
