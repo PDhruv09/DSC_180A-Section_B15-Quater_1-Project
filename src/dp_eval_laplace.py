@@ -1,6 +1,4 @@
 """
-***NEED TO UPDATE CODE***
-
 dp_eval_laplace.py
 
 Runs the Laplace DP mechanism multiple times and evaluates utility
@@ -18,14 +16,13 @@ import json
 import numpy as np
 import pandas as pd
 
-from dp_Gaussian_mechanism import (
+from dp_Laplace_mechanism import (
     load_clean_telemetry,
     build_user_level_primary_product,
     compute_true_user_level_counts,
-    add_gaussian_noise_to_counts,
+    add_laplace_noise_to_counts,
     get_top_set_from_zscores,
     DEFAULT_EPSILON,
-    DEFAULT_DELTA,
 )
 
 # Paths
@@ -87,16 +84,15 @@ def summarize_metric_array(values: list[float]) -> dict:
 def main(
     num_runs: int = 100,
     epsilon: float = DEFAULT_EPSILON,
-    delta: float = DEFAULT_DELTA,
     base_seed: int = 12345,
 ):
     """
-    Run the DP mechanism `num_runs` times with different random seeds
+    Run the Laplace DP mechanism `num_runs` times with different random seeds
     and evaluate L_infinity and IOU for each run.
 
     Outputs:
-        - reports/dp_eval_runs.csv: one row per run with L_inf and IOU
-        - reports/dp_eval_summary.json: quantiles for both metrics
+        - reports/dp_eval_runs_laplace.csv: one row per run with L_inf and IOU
+        - reports/dp_eval_summary_laplace.json: quantiles for both metrics
     """
 
     print("[dp_eval] Loading cleaned telemetry and building TRUE stats...")
@@ -120,9 +116,9 @@ def main(
         seed = base_seed + run_idx
         print(f"[dp_eval] Run {run_idx+1}/{num_runs} (seed={seed})")
 
-        # Apply DP mechanism with this seed
-        noisy_counts = add_gaussian_noise_to_counts(
-            true_counts, epsilon=epsilon, delta=delta, random_state=seed
+        # Apply Laplace DP mechanism with this seed
+        noisy_counts = add_laplace_noise_to_counts(
+            true_counts, epsilon=epsilon, random_state=seed
         )
 
         # Extract DP z-scores and DP top set
@@ -144,7 +140,7 @@ def main(
             "IOU": iou_values,
         }
     )
-    runs_csv_path = os.path.join(REPORT_DIR, "dp_eval_runs.csv")
+    runs_csv_path = os.path.join(REPORT_DIR, "dp_eval_runs_laplace.csv")
     runs_df.to_csv(runs_csv_path, index=False)
     print(f"[dp_eval] Saved per-run metrics -> {runs_csv_path}")
 
@@ -154,13 +150,12 @@ def main(
 
     summary = {
         "epsilon": epsilon,
-        "delta": delta,
         "num_runs": num_runs,
         "L_inf_summary": l_inf_summary,
         "IOU_summary": iou_summary,
     }
 
-    summary_path = os.path.join(REPORT_DIR, "dp_eval_summary.json")
+    summary_path = os.path.join(REPORT_DIR, "dp_eval_summary_laplace.json")
     with open(summary_path, "w") as f:
         json.dump(summary, f, indent=2)
 
@@ -170,5 +165,5 @@ def main(
 
 
 if __name__ == "__main__":
-    # Default: 100 runs, epsilon=2.0, delta=1e-6
+    # Default: 100 runs, epsilon=2.0 (Laplace is pure epsilon-DP, no delta needed)
     main()
