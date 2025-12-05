@@ -278,7 +278,6 @@ def get_top_set_from_zscores(z_series: pd.Series, threshold: float = 0.0):
 
 def main():
     """
-    Convenience entry point:
     - Load cleaned telemetry.
     - Build primary-product user-level table.
     - Compute TRUE counts / error rates / z-scores.
@@ -304,14 +303,11 @@ def main():
 
     # Merge true and DP stats into one DataFrame for inspection
     merged = noisy_counts.copy()  # already has U_total, U_error, error_rate_true, z_true
-    # (No extra merge needed; add_gaussian_noise_to_counts worked on true_counts.)
 
-    # Save for inspection
     out_path = os.path.join(REPORT_DIR, "dp_user_level_counts_and_zscores.csv")
     merged.to_csv(out_path)
     print(f"[dp_mechanism] Saved DP + true stats -> {out_path}")
 
-    # Print top sets for sanity
     true_top = get_top_set_from_zscores(merged["z_true"])
     dp_top = get_top_set_from_zscores(merged["z_dp"])
     print(f"[dp_mechanism] TRUE top set (z_true > 0): {true_top}")
