@@ -62,6 +62,7 @@ DSC_180A-Section_B15-Quarter_1-Project/
 │   ├── dp_Laplace_mechanism.py                 # Laplace DP mechanism implementation
 │   ├── dp_eval_gaussian.py                     # Gaussian DP evaluation (100 runs)
 │   └── dp_eval_laplace.py                      # Laplace DP evaluation (100 runs)
+│   └── eval_comparison.py                      # Comparison of evluation run by both mechanism and thier plots
 │
 ├── reports/                                    # Generated CSV/JSON reports
 │   ├── telemetry_summary_statistics.csv
