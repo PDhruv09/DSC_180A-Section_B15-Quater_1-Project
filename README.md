@@ -561,9 +561,9 @@ This characterizes the **variability** introduced by randomness in the DP mechan
 ## Contact
 
 For questions or feedback:
-- **Dhruv Patel** - [@PDhruv09](https://github.com/PDhruv09)
-- **Reva Agrawal** - [@agrawalreva](https://github.com/agrawalreva)
-- **Jordan Lambino** - [@jordanlambino](https://github.com/jordanlambino)
+- **Dhruv Patel** - [dhp005@ucsd.edu]
+- **Reva Agrawal** - [ragrawal@ucsd.edu]
+- **Jordan Lambino** - [jlambino@ucsd.edu]
 
 ---
 
