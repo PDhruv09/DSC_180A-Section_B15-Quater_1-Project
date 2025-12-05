@@ -1,5 +1,5 @@
 # DSC_180A Section_B15 Quarter_1 Project  
-**Title:** Differentially Private Telemetry Data Analysis – Non-Private Exploration 
+**Title:** Balancing Privacy and Utility: Differentially Private Synthetic Telemetry Data Generation
 
 **Team & Mentor:** 
 | Name             | Role    | GitHub       |
@@ -520,9 +520,17 @@ This characterizes the **variability** introduced by randomness in the DP mechan
    - Can DP reliably identify products with high error rates?
    - How often does IOU = 1.0 (perfect preservation)?
 
+### Comparisons
+- **Metrics Compared:** Linf and IOU values across 100 independent runs
+- **Side-by-Side Analysis:** 
+  - One plot overlays Laplace vs. Gaussian Linf results
+  - Another plot overlays Laplace vs. Gaussian IOU results
+- **Purpose:** To evaluate differences in robustness and accuracy between Laplace and Gaussian mechanisms
+- **Interpretation:** Visualizations highlight distributional shifts, variance, and relative performance across mechanisms
+
 ### Output Locations
-- **Quantitative Results:** `reports/dp_eval_summary.json` and `reports/dp_eval_summary_laplace.json`
-- **Per-Run Data:** `reports/dp_eval_runs.csv` and `reports/dp_eval_runs_laplace.csv`
+- **Quantitative Results:** `reports/dp_eval_summary_gaussian.json` and `reports/dp_eval_summary_laplace.json`
+- **Post-Run Data:** `reports/dp_eval_runs_gaussian.csv` and `reports/dp_eval_runs_laplace.csv`
 - **Visualizations:** Generated in notebooks with distribution plots, boxplots, and comparison charts
 
 ---
