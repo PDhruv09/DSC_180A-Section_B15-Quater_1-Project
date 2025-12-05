@@ -23,7 +23,6 @@
 - [Statistical Methods](#-statistical-methods)
 - [Evaluation Metrics](#-evaluation-metrics)
 - [Results](#-results)
-- [Contributing](#-contributing)
 
 ---
 
