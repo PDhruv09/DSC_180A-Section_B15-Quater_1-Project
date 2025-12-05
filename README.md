@@ -37,6 +37,7 @@ Our primary goal is to explore how well differentially private mechanisms (both 
 3. Which DP mechanism (Gaussian vs. Laplace) performs better for telemetry data?
 4. How do L∞ error and IOU (Intersection over Union) metrics vary across different privacy budgets?
 
+For a detailed discussion of these questions and our methodology, please refer to the full report [here](https://drive.google.com/file/d/1AS2MzcOv4TvUNJKeGbtr0ebVXijjNVdq/view?usp=sharing)
 ---
 
 ## Repository Structure
