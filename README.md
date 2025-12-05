@@ -550,7 +550,7 @@ This characterizes the **variability** introduced by randomness in the DP mechan
    - Sequential composition over time windows
    - Privacy budget allocation strategies
 
-4. ** Production Deployment:**
+4. **Production Deployment:**
    - Scale to production telemetry systems
    - Develop automated DP reporting pipelines
    - Create privacy-preserving dashboards
