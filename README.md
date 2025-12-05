@@ -1,5 +1,5 @@
 # DSC_180A Section_B15 Quarter_1 Project  
-**Title:** Differentially Private Telemetry Data Analysis – Non-Private Exploration 
+**Title:** Balancing Privacy and Utility: Differentially Private Synthetic Telemetry Data Generation
 
 **Team & Mentor:** 
 | Name             | Role    | GitHub       |
